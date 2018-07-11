@@ -6,6 +6,6 @@ app.$mount()
 
 export default {
   config: {
-    navigationBarTitleText: '周助手'
+    navigationBarTitleText: '微信授权'
   }
 }

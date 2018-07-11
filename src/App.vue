@@ -1,12 +1,13 @@
 <script>
 export default {
-  created () {
+  onLaunch () {
     // 调用API从本地缓存中获取数据
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    console.log('app created and cache logs by setStorageSync')
+    const userinfo = wx.getStorageSync('userinfo')
+    if(userinfo) {
+      wx.switchTab({ url: 'pages/index/main' });
+    }else {
+      wx.navigateTo({ url: 'pages/wxauth/main' });
+    }
   }
 }
 </script>
